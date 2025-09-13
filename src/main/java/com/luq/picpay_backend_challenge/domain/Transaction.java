@@ -33,8 +33,9 @@ public class Transaction {
     @LastModifiedDate
     private LocalDateTime modified;
 
-    public Transaction(TransactionType transactionType, User payer, User payee, LocalDateTime created, LocalDateTime modified){
+    public Transaction(TransactionType transactionType, BigDecimal amount, User payer, User payee, LocalDateTime created, LocalDateTime modified){
         this.transactionType = transactionType;
+        this.amount = amount;
         this.payer = payer;
         this.payee = payee;
         this.created = created;
