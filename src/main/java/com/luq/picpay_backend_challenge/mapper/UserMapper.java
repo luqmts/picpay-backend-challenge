@@ -28,7 +28,8 @@ public class UserMapper {
             entity.getFullName(),
             entity.getDocument(),
             entity.getMail(),
-            entity.getPassword()
+            entity.getPassword(),
+            entity.getBalance()
         );
     }
 
