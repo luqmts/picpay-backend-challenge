@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity(name = "transactions")
@@ -26,6 +27,7 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "payee_id")
     private User payee;
+    private BigDecimal amount;
     @CreatedDate
     private LocalDateTime created;
     @LastModifiedDate

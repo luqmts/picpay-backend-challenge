@@ -14,6 +14,7 @@ public class TransactionMapper {
             entity.getTransactionType(),
             entity.getPayer(),
             entity.getPayee(),
+            entity.getAmount(),
             entity.getCreated(),
             entity.getModified()
         );
