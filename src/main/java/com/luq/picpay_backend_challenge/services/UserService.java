@@ -10,9 +10,11 @@ import com.luq.picpay_backend_challenge.exceptions.PasswordDontMatchException;
 import com.luq.picpay_backend_challenge.mapper.UserMapper;
 import com.luq.picpay_backend_challenge.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;

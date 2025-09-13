@@ -4,9 +4,11 @@ import com.luq.picpay_backend_challenge.domain.User;
 import com.luq.picpay_backend_challenge.domain.UserType;
 import com.luq.picpay_backend_challenge.dto.request.UserRequest;
 import com.luq.picpay_backend_challenge.dto.response.UserResponse;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class UserMapper {
     public User toEntity(UserRequest data){
         return new User(
