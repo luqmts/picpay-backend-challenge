@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public record UserRequest(
     String fullName,
+    String userType,
     String document,
     String mail,
     String password,
