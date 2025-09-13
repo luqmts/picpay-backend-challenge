@@ -5,6 +5,7 @@ import com.luq.picpay_backend_challenge.domain.TransactionType;
 import com.luq.picpay_backend_challenge.domain.User;
 import com.luq.picpay_backend_challenge.domain.UserType;
 import com.luq.picpay_backend_challenge.dto.request.TransactionRequest;
+import com.luq.picpay_backend_challenge.dto.request.MailNotificationRequest;
 import com.luq.picpay_backend_challenge.dto.response.AuthorizationResponse;
 import com.luq.picpay_backend_challenge.dto.response.TransactionResponse;
 import com.luq.picpay_backend_challenge.exceptions.InvalidTransactionTypeException;
@@ -31,6 +32,8 @@ public class TransactionService {
     @Autowired
     private AuthorizationService authorizationService;
     @Autowired
+    private NotificationService notificationService;
+    @Autowired
     private TransactionMapper transactionMapper;
 
     @Transactional
@@ -46,13 +49,18 @@ public class TransactionService {
         userRepository.saveAll(List.of(payer, payee));
         Transaction transaction = transactionRepository.save(new Transaction(
             (payee.getUserType() == UserType.Common) ? TransactionType.UserToUser : TransactionType.UserToMerchant,
+            request.amount(),
             payer,
             payee,
             LocalDateTime.now(),
             LocalDateTime.now()
         ));
+        TransactionResponse transactionResponse = transactionMapper.toDTO(transaction);
 
-        return transactionMapper.toDTO(transaction);
+        MailNotificationRequest mailNotificationRequest = notificationService.createMailRequest(transactionResponse);
+        notificationService.mailNotify(mailNotificationRequest);
+
+        return transactionResponse;
     }
 
     private boolean validateTransaction(User payer, BigDecimal amount){
