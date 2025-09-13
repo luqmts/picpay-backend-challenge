@@ -26,8 +26,9 @@ public class User {
     private String password;
     private BigDecimal balance;
 
-    public User(String fullName, String mail, String document, String password, BigDecimal balance){
+    public User(String fullName, UserType userType, String mail, String document, String password, BigDecimal balance){
         this.fullName = fullName;
+        this.userType = userType;
         this.mail = mail;
         this.document = document;
         this.password = password;
