@@ -105,8 +105,11 @@ if it needs, the request body.
 <h1 id="request-response-body">Corpo das requisições e respostas dos endpoints / Request and Response Body endpoint</h1>
 
 ## CRUD de Usuários / User Crud
+
 <h3 id="post-user">POST /api/user</h3>
+
 #### REQUEST
+
 ```json
 {
     "fullName": "user sample",
@@ -118,7 +121,9 @@ if it needs, the request body.
     "balance": 150.0
 }
 ```
+
 #### RESPONSE
+
 ```json
 {
     "id": 1,
@@ -131,7 +136,9 @@ if it needs, the request body.
 ```
 
 <h3 id="put-user">PUT /api/user/{id}</h3>
+
 #### REQUEST
+
 ```json
 {
     "fullName": "user sample modified",
@@ -143,7 +150,9 @@ if it needs, the request body.
     "balance": 150.0
 }
 ```
+
 #### RESPONSE
+
 ```json
 {
     "id": 1,
@@ -156,7 +165,9 @@ if it needs, the request body.
 ```
 
 <h3 id="get-user">GET /api/user</h3>
+
 #### RESPONSE
+
 ```json
 [
     {
@@ -171,7 +182,9 @@ if it needs, the request body.
 ```
 
 <h3 id="get-user-by-id">GET /api/user/{id}</h3>
+
 #### RESPONSE
+
 ```json
 {
     "id": 1,
@@ -184,7 +197,9 @@ if it needs, the request body.
 ```
 
 <h3 id="delete-user">DELETE /api/user{id}</h3>
+
 #### RESPONSE
+
 ```json
 {
     "message": "Successfully deleted User with id: 1"
@@ -194,7 +209,9 @@ if it needs, the request body.
 ## Transações / Transactions
 
 <h3 id="post-transaction">POST /api/transaction/transfer</h3>
+
 #### REQUEST
+
 ```json
 {
     "payerId": 1,
@@ -202,7 +219,9 @@ if it needs, the request body.
     "amount": 5
 }
 ```
+
 #### RESPONSE
+
 ```json
 {
     "id": 1,
@@ -230,8 +249,9 @@ if it needs, the request body.
 ```
 
 <h3 id="get-transactions">GET /api/transaction/transfer</h3>
-### GET /api/transaction/transfer
+
 #### RESPONSE
+
 ```json
 [
     {
