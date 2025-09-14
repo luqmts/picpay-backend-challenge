@@ -6,10 +6,9 @@ import java.math.BigDecimal;
 
 public record UserResponse(
     Integer id,
-    UserType userType,
     String fullName,
+    UserType userType,
     String document,
     String mail,
-    String password,
     BigDecimal balance
 ) {}
