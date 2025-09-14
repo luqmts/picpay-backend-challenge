@@ -1,9 +1,11 @@
 [JAVA_BADGE]:https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [SPRING_BADGE]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
+[KAFKA_BADGE]: https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white
 <h1 align="center" style="font-weight: bold;">PicPay Simplificado</h1>
 
 ![java][JAVA_BADGE]
 ![spring][SPRING_BADGE]
+![kafka][KAFKA_BADGE]
 
 >  Não participei de processo seletivo algum do PicPay, esse projeto foi desenvolvido apenas para fins de aprendizado.
 
@@ -27,7 +29,7 @@ A aplicação possui duas entidades, _User_ e _Transaction_, a primeira apresent
 e o segundo sendo responsável por representar uma Transação entre dois Usuários.
 
 As notificações enviadas através da aplicação são gerenciadas por um microsserviço, durante o desenvolvimento foi utilizado
-o que está disponível [nesse repositório](), caso queira utilizar um próprio, a aplicação cria mensagens no tópico _notify_mail_topic_.
+o que está disponível [nesse repositório](https://github.com/luqmts/notification), caso queira utilizar um próprio, a aplicação cria mensagens no tópico _notify_mail_topic_.
 
 <h1 id="requisites-pt-br">Requisitos</h1>
 
@@ -70,8 +72,7 @@ Application have two Entities, _User_ and _Transaction_, first one present Users
 responsible to represent a Transaction between two Users
 
 Notifications sent on this application are managed by a microservice, on development was used the one available on 
-[this repository](), if you want to use another one, application create messages on topic _notify_mail_topic_.
-
+[this repository](https://github.com/luqmts/notification), if you want to use another one, application create messages on topic _notify_mail_topic_.
 
 <h1 id="requisites-en-us">Requisites</h1>
 
