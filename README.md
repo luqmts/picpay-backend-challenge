@@ -26,6 +26,9 @@ podendo ser encontrado a proposta e mais informações [aqui](https://github.com
 A aplicação possui duas entidades, _User_ e _Transaction_, a primeira apresentando os Usuários que podem ser gerenciados
 e o segundo sendo responsável por representar uma Transação entre dois Usuários.
 
+As notificações enviadas através da aplicação são gerenciadas por um microsserviço, durante o desenvolvimento foi utilizado
+o que está disponível [nesse repositório](), caso queira utilizar um próprio, a aplicação cria mensagens no tópico _notify_mail_topic_.
+
 <h1 id="requisites-pt-br">Requisitos</h1>
 
 - [Java 21](https://www.oracle.com/br/java/technologies/downloads/)
@@ -65,6 +68,10 @@ can be found the proposal and more info about it [here](https://github.com/PicPa
 
 Application have two Entities, _User_ and _Transaction_, first one present Users that can be managed and second one is
 responsible to represent a Transaction between two Users
+
+Notifications sent on this application are managed by a microservice, on development was used the one available on 
+[this repository](), if you want to use another one, application create messages on topic _notify_mail_topic_.
+
 
 <h1 id="requisites-en-us">Requisites</h1>
 
