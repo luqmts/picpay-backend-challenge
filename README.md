@@ -29,8 +29,8 @@ e o segundo sendo responsável por representar uma Transação entre dois Usuár
 
 <h1 id="requisites-pt-br">Requisitos</h1>
 
-- [Java 21]()
-- [Apache Kafka]()
+- [Java 21](https://www.oracle.com/br/java/technologies/downloads/)
+- [Apache Kafka 4.0.0](https://kafka.apache.org/downloads)
 
 <h1 id="install-and-use-pt-br">Instalação e utilização</h1>
 
@@ -210,4 +210,3 @@ Abaixo há todas as rotas de API disponíveis atualmente, o corpo da requisiçã
         "modified": "2025-09-14T12:41:03.07254559"
     }
 ]
-```
