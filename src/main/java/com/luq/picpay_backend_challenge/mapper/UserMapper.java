@@ -24,11 +24,10 @@ public class UserMapper {
     public UserResponse toDTO(User entity){
         return new UserResponse(
             entity.getId(),
-            entity.getUserType(),
             entity.getFullName(),
+            entity.getUserType(),
             entity.getDocument(),
             entity.getMail(),
-            entity.getPassword(),
             entity.getBalance()
         );
     }
