@@ -9,15 +9,14 @@
 
 - [🇧🇷 Descrição](#description-pt-br)
 - [Requisitos](#requisites-pt-br)
-- [Instalação e utilização](#install-and-use-pt-br)
+- [Instalação e utilização](#install-and-usage-pt-br)
 - [Endpoints disponíveis](#available-endpoints-pt-br)
-    - [POST /api/user](#post-user)
-    - [PUT /api/user/{id}](#put-user)
-    - [GET /api/user/](#get-user)
-    - [GET /api/user/{id}](#get-user-by-id)
-    - [DELETE /api/user/{id}](#delet-user)
-    - [POST /api/transaction/transfer](#post-transaction)
-    - [GET /api/transaction/transfer](#get-transactions)
+  - [Corpo das requisições e respostas dos endpoints](#request-response-body)
+- [🇺🇸 Description](#description-en-us)
+- [Requisites](#requisites-en-us)
+- [Installation and usage](#install-and-usage-en-us)
+- [Available Endpoints](#available-endpoints-en-us)
+  - [Request and Response Body endpoint](#request-response-body)
 
 <h1 id="description-pt-br">🇧🇷 Descrição</h1>
 
@@ -32,7 +31,7 @@ e o segundo sendo responsável por representar uma Transação entre dois Usuár
 - [Java 21](https://www.oracle.com/br/java/technologies/downloads/)
 - [Apache Kafka 4.0.0](https://kafka.apache.org/downloads)
 
-<h1 id="install-and-use-pt-br">Instalação e utilização</h1>
+<h1 id="install-and-usage-pt-br">Instalação e utilização</h1>
 
 1. Realize o clone do repositório na sua máquina com `git clone your-project-url-in-github`;
 2. Verifique se as dependências no arquivo [pom](./pom.xml) foram adicionados corretamente no projeto, caso não,
@@ -43,7 +42,9 @@ e o segundo sendo responsável por representar uma Transação entre dois Usuár
 
 <h1 id="available-endpoints-pt-br">Endpoints disponíveis</h1>
 
-Abaixo há todas as rotas de API disponíveis atualmente, o corpo da requisição, caso necessário e o que será retornado.
+Abaixo há todas as rotas de API disponíveis atualmente e uma descrição, ao clicar em alguma, é possível acessar o corpo da
+resposta e caso exista, o corpo da requisição.
+
 
 | Rota                                                | Descrição                             | 
 |-----------------------------------------------------|---------------------------------------|
@@ -55,8 +56,48 @@ Abaixo há todas as rotas de API disponíveis atualmente, o corpo da requisiçã
 | [POST /api/transaction/transfer](#post-transaction) | Registra uma nova transferência       | 
 | [GET /api/transaction/transfer](#get-transactions)  | Obtém todas transferências realizadas |
 
+---
 
-## CRUD de Usuários
+<h1 id="description-en-us">🇺🇸 Description</h1>
+
+This project was developed as a solution for back-end technical challenge from PicPay in their official repository, where it
+can be found the proposal and more info about it [here](https://github.com/PicPay/picpay-desafio-backend).
+
+Application have two Entities, _User_ and _Transaction_, first one present Users that can be managed and second one is
+responsible to represent a Transaction between two Users
+
+<h1 id="requisites-en-us">Requisites</h1>
+
+- [Java 21](https://www.oracle.com/br/java/technologies/downloads/)
+- [Apache Kafka 4.0.0](https://kafka.apache.org/downloads)
+
+<h1 id="install-and-usage-en-us">Installation and usage</h1>
+
+1. Clone repository on your desktop with `git clone your-project-url-in-github`;
+2. Verify if project's dependencies on [pom](./pom.xml) file were correctly added, if not, run the command `mvn clean install`;
+3. Start Kafka on port 9092;
+4. If topic _notify_mail_topic_ is not created, create it;
+5. Run command `mvn spring-boot:run` to start application.
+
+<h1 id="available-endpoints-en-us">Available endpoints</h1>
+
+Bellow there are every API route actually available and a description, clicking on it, you can access the response body and
+if it needs, the request body.
+
+| Rota                                                | Descrição                    | 
+|-----------------------------------------------------|------------------------------|
+| [POST /api/user](#post-user)                        | Submit a new user            | 
+| [PUT /api/user/{id}](#put-user)                     | Update a user by id          | 
+| [GET /api/user/](#get-user)                         | Get all submitted users      | 
+| [GET /api/user/{id}](#get-user-by-id)               | Get a user by id             | 
+| [DELETE /api/user/{id}](#delet-user)                | Delete a user by id          | 
+| [POST /api/transaction/transfer](#post-transaction) | Register a new transfer      | 
+| [GET /api/transaction/transfer](#get-transactions)  | Get all registered transfers |
+
+--- 
+<h1 id="request-response-body">Corpo das requisições e respostas dos endpoints / Request and Response Body endpoint</h1>
+
+## CRUD de Usuários / User Crud
 <h3 id="post-user">POST /api/user</h3>
 #### REQUEST
 ```json
@@ -143,7 +184,7 @@ Abaixo há todas as rotas de API disponíveis atualmente, o corpo da requisiçã
 }
 ```
 
-## Transações
+## Transações / Transactions
 
 <h3 id="post-transaction">POST /api/transaction/transfer</h3>
 #### REQUEST
@@ -210,3 +251,4 @@ Abaixo há todas as rotas de API disponíveis atualmente, o corpo da requisiçã
         "modified": "2025-09-14T12:41:03.07254559"
     }
 ]
+```
